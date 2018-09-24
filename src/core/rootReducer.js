@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import appReducer from './App/app.reducer';
 import { snackbarReducer } from 'Src/modules/Snackbar';
-import { reducer as loginFormReducer } from 'redux-form';
+import { reducer as formReducer } from 'redux-form';
 
 export default combineReducers({
-  form: loginFormReducer,
+  form: formReducer,
   common: appReducer,
   snackbar: snackbarReducer
 });

@@ -17,7 +17,7 @@ const initialState = {
     email: '',
     username: '',
     question: {
-      level: null,
+      level: 0,
       question: '',
       addinfo: ''
     }

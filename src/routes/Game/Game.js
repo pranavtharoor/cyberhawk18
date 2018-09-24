@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Playground from 'Src/modules/Playground';
 
 class Game extends Component {
   static propTypes = {
@@ -11,7 +12,11 @@ class Game extends Component {
   }
 
   render() {
-    return <div>Game</div>;
+    return (
+      <div>
+        <Playground />
+      </div>
+    );
   }
 }
 

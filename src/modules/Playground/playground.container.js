@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import { pick } from 'ramda';
 import { action } from 'Src/utils';
-import Game from './Game';
+import Playground from './Playground';
 
 const mapDispatchToProps = dispatch => ({
-  initGame: () => dispatch(action('FETCH_INIT_GAME_BEGIN'))
+  onSubmit: data => dispatch(action('FETCH_CHECK_ANSWER_BEGIN', data))
 });
 
 const mapStateToProps = state => ({
@@ -14,4 +14,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Game);
+)(Playground);

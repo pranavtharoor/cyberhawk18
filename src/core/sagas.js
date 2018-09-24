@@ -1,8 +1,10 @@
 import { all, put } from 'redux-saga/effects';
 import { navbarSaga } from 'Src/modules/Navbar';
 import { loginFormSaga } from 'Src/modules/LoginForm';
+import { registerFormSaga } from 'Src/modules/RegisterForm';
+import { playgroundSaga } from 'Src/modules/Playground';
+import { gameSaga } from 'Src/routes/Game';
 import { action } from 'Src/utils';
-import gameSaga from 'Src/routes/Game/game.sagas';
 
 function* init() {
   process.env.NODE_ENV === 'development' &&
@@ -13,7 +15,14 @@ function* init() {
 }
 
 export function* rootSaga() {
-  yield all([init(), navbarSaga(), loginFormSaga(), gameSaga()]);
+  yield all([
+    init(),
+    navbarSaga(),
+    loginFormSaga(),
+    registerFormSaga(),
+    gameSaga(),
+    playgroundSaga()
+  ]);
 }
 
 export default rootSaga;

@@ -1,24 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import './navbar.scss';
 
-const Navbar = props => (
-  <div>
-    <div className={`nav`}>
-      <button onClick={props.logout}>Log Out</button>
+const Navbar = props =>
+  props.loggedIn ? (
+    <div className="navbar loggedin">
+      <div className="level">Level {props.level}</div>
+      <div className="name">{props.name.split(' ')[0]}</div>
+      <button className="logout" onClick={props.logout}>
+        Logout
+      </button>
     </div>
-    <div>
-      <div className="greeting">{props.gameData.name.split(' ')[0]}</div>
+  ) : (
+    <div className="navbar loggedout">
+      <NavLink to="/login" activeClassName="active">
+        Login
+      </NavLink>
+      <NavLink to="/register" activeClassName="active">
+        Register
+      </NavLink>
     </div>
-  </div>
-);
+  );
 
 Navbar.propTypes = {
   logout: PropTypes.func.isRequired,
-  history: PropTypes.object.isRequired,
-  gameData: PropTypes.shape({
-    name: PropTypes.string.isRequired
-  })
+  level: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  loggedIn: PropTypes.bool.isRequired
 };
 
-export default withRouter(Navbar);
+export default Navbar;

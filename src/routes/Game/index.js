@@ -1,6 +1,6 @@
-import Game from './game.container';
 import saga from './game.sagas';
+import asyncComponent from 'Src/enhancers/asyncComponent';
 
 export const gameSaga = saga;
 
-export default Game;
+export default asyncComponent(() => import('./game.container'));

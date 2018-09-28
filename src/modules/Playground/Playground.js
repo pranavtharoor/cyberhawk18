@@ -4,8 +4,6 @@ import { Field, reduxForm } from 'redux-form';
 
 let Playground = props => (
   <div>
-    {props.level}
-    <br />
     {props.question}
     <br />
     {props.addinfo}
@@ -24,7 +22,6 @@ let Playground = props => (
 Playground.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
-  level: PropTypes.number.isRequired,
   question: PropTypes.string.isRequired,
   addinfo: PropTypes.string.isRequired
 };

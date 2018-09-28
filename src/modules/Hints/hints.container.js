@@ -1,17 +1,17 @@
 import { connect } from 'react-redux';
 import { pick } from 'ramda';
 import { action } from 'Src/utils';
-import Playground from './Playground';
+import Hints from './Hints';
 
 const mapDispatchToProps = dispatch => ({
-  onSubmit: data => dispatch(action('FETCH_CHECK_ANSWER_BEGIN', data))
+  getHints: () => dispatch(action('FETCH_HINTS_BEGIN'))
 });
 
 const mapStateToProps = state => ({
-  ...pick(['question', 'addinfo'], state.common.gameData.question)
+  ...pick(['hints'], state.hints)
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Playground);
+)(Hints);

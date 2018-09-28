@@ -18,7 +18,7 @@ const App = props => (
           props.loggedIn &&
           'background'}`}
       >
-        {props.loggedIn && <Navbar />}
+        <Navbar />
         <Switch>
           {routes.map(route => (
             <Route

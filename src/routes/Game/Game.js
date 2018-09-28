@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Playground from 'Src/modules/Playground';
+import Hints from 'Src/modules/Hints';
+import Tries from 'Src/modules/Tries';
 
 class Game extends Component {
   static propTypes = {
@@ -15,6 +17,8 @@ class Game extends Component {
     return (
       <div>
         <Playground />
+        <Hints />
+        <Tries />
       </div>
     );
   }

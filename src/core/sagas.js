@@ -3,6 +3,8 @@ import { navbarSaga } from 'Src/modules/Navbar';
 import { loginFormSaga } from 'Src/modules/LoginForm';
 import { registerFormSaga } from 'Src/modules/RegisterForm';
 import { playgroundSaga } from 'Src/modules/Playground';
+import { hintsSaga } from 'Src/modules/Hints';
+import { triesSaga } from 'Src/modules/Tries';
 import { gameSaga } from 'Src/routes/Game';
 import { action } from 'Src/utils';
 
@@ -21,7 +23,9 @@ export function* rootSaga() {
     loginFormSaga(),
     registerFormSaga(),
     gameSaga(),
-    playgroundSaga()
+    playgroundSaga(),
+    hintsSaga(),
+    triesSaga()
   ]);
 }
 

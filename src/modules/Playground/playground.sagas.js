@@ -11,7 +11,11 @@ function* checkAnswer({ payload }) {
         message: data.msg
       })
     );
-    if (data.data === 1) yield put(action('FETCH_INIT_GAME_BEGIN'));
+    if (data.data === 1) {
+      yield put(action('FETCH_INIT_GAME_BEGIN'));
+      yield put(action('CLEAR_HINTS'));
+      yield put(action('CLEAR_TRIES'));
+    } else yield put(action('ADD_TRY', payload.answer));
   } else
     yield put(action('SET_SNACKBAR', { type: 'danger', message: data.msg }));
   yield delay(3000);

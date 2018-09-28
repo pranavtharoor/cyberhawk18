@@ -21,6 +21,7 @@ let RegisterForm = props => (
       type="password"
       placeholder="Password"
     />
+    <Field name="name" component="input" type="text" placeholder="Name" />
     <Field name="email" component="input" type="email" placeholder="Email" />
     <Field name="tel" component="input" type="number" placeholder="Mobile" />
     <Field name="college" component="input" type="text" placeholder="College" />

@@ -1,0 +1,18 @@
+@import 'Src/core/common.scss';
+
+.navbar.loggedin {
+  display: flex;
+
+  * {
+    background: $color-dark;
+    color: $color-light;
+  }
+
+  .name {
+    margin-left: auto;
+  }
+
+  .logout {
+    border: none;
+  }
+}

@@ -1,0 +1,42 @@
+@import 'Src/core/common.scss';
+
+.hints-container {
+  height: 100%;
+  width: 100%;
+  @include card();
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+
+  .heading {
+    @include heading();
+
+    button {
+      height: 100%;
+      width: 100%;
+      background: transparent;
+      border: none;
+      color: $color-light;
+      font-size: 1.2rem;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .hints {
+    background: $color-light;
+    height: calc(100% - 55px);
+    padding: 10px;
+    text-align: left;
+    word-wrap: none;
+    overflow: auto;
+    @include scrollbar();
+
+    & > div {
+      padding: 3px;
+      border-bottom: solid thin rgba(100, 100, 100, 0.2);
+    }
+  }
+}

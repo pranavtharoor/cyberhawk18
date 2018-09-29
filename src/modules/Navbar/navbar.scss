@@ -1,18 +1,62 @@
 @import 'Src/core/common.scss';
 
-.navbar.loggedin {
-  display: flex;
+.navbar {
+  &.loggedin {
+    display: flex;
+    padding: 30px 2.5vw;
 
-  * {
-    background: $color-dark;
-    color: $color-light;
+    & > div {
+      background: $color-dark;
+      color: $color-light;
+      padding: 10px 20px;
+      margin: 20px;
+      border-radius: $radius;
+      font-size: 1.3rem;
+    }
+
+    .avatar {
+      margin-left: auto;
+      border-radius: 50%;
+      position: relative;
+      height: 45px;
+      width: 45px;
+
+      .dropdown-container {
+        display: none;
+      }
+
+      &:hover .dropdown-container {
+        display: block;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        padding: 40px 40px 0 0;
+        z-index: 1000;
+
+        .dropdown {
+          @include card();
+          background: $color-dark;
+          border-radius: $radius;
+          overflow: hidden;
+
+          & > * {
+            font-size: 1.1rem;
+            padding: 10px 30px;
+            width: 100%;
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    .logout {
+      border: none;
+    }
   }
 
-  .name {
-    margin-left: auto;
-  }
-
-  .logout {
-    border: none;
+  &:not(.loggedin) {
+    .active {
+      color: white;
+    }
   }
 }

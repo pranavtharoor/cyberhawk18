@@ -5,6 +5,7 @@ import { registerFormSaga } from 'Src/modules/RegisterForm';
 import { playgroundSaga } from 'Src/modules/Playground';
 import { hintsSaga } from 'Src/modules/Hints';
 import { triesSaga } from 'Src/modules/Tries';
+import { statsSaga } from 'Src/modules/Stats';
 import { gameSaga } from 'Src/routes/Game';
 import { action } from 'Src/utils';
 
@@ -23,6 +24,7 @@ export function* rootSaga() {
     loginFormSaga(),
     registerFormSaga(),
     gameSaga(),
+    statsSaga(),
     playgroundSaga(),
     hintsSaga(),
     triesSaga()

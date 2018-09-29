@@ -1,0 +1,20 @@
+@import 'Src/core/common.scss';
+
+.game-page {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+
+  & > div {
+    height: calc(100vh - 139px - 7vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5vh 2.5vw;
+    width: 30%;
+
+    &:nth-child(2) {
+      width: 40%;
+    }
+  }
+}

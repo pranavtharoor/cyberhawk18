@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './tries.scss';
 
 class Tries extends Component {
   static propTypes = {
@@ -13,10 +14,13 @@ class Tries extends Component {
 
   render() {
     return (
-      <div>
-        {this.props.tries.map((recentTry, i) => (
-          <div key={`recentTry_${i}`}>{recentTry}</div>
-        ))}
+      <div className="tries-container">
+        <div className="heading">Recent Tries</div>
+        <div className="tries">
+          {this.props.tries.map((recentTry, i) => (
+            <div key={`recentTry_${i}`}>{recentTry}</div>
+          ))}
+        </div>
       </div>
     );
   }

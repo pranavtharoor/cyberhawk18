@@ -9,11 +9,13 @@ const mapDispatchToProps = dispatch => ({
 
 const mapStateToProps = state => ({
   ...pick(['loggedIn'], state.common),
-  ...pick(['name'], state.common.gameData),
+  ...pick(['username'], state.common.gameData),
   ...pick(['level'], state.common.gameData.question)
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
+  null,
+  { pure: false }
 )(Navbar);

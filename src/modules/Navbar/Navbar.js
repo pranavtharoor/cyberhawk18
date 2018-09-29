@@ -6,18 +6,24 @@ import './navbar.scss';
 const Navbar = props =>
   props.loggedIn ? (
     <div className="navbar loggedin">
-      <div className="level">Level {props.level}</div>
-      <div className="name">{props.name.split(' ')[0]}</div>
-      <button className="logout" onClick={props.logout}>
-        Logout
-      </button>
+      <div className="level">LEVEL {props.level}</div>
+      <div className="avatar">
+        <div className="dropdown-container">
+          <div className="dropdown">
+            <div className="name">{props.username}</div>
+            <button className="logout" onClick={props.logout}>
+              Logout
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   ) : (
     <div className="navbar loggedout">
-      <NavLink to="/login" activeClassName="active">
+      <NavLink exact={true} to="/login" activeClassName="active">
         Login
       </NavLink>
-      <NavLink to="/register" activeClassName="active">
+      <NavLink exact={true} to="/register" activeClassName="active">
         Register
       </NavLink>
     </div>
@@ -26,7 +32,7 @@ const Navbar = props =>
 Navbar.propTypes = {
   logout: PropTypes.func.isRequired,
   level: PropTypes.number.isRequired,
-  name: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
   loggedIn: PropTypes.bool.isRequired
 };
 

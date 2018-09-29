@@ -1,19 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Field, reduxForm } from 'redux-form';
+import './playground.scss';
 
 let Playground = props => (
-  <div>
-    {props.question}
-    <br />
-    {props.addinfo}
-    <br />
-    <form onSubmit={props.handleSubmit}>
+  <div className="playground">
+    <div className="question-container">
+      <div className="question">{props.question}</div>
+      <div className="add-info">{props.addinfo}</div>
+    </div>
+    <form className="answer-contianer" onSubmit={props.handleSubmit}>
       <Field
+        className="answer-input"
+        autoComplete="off"
+        autoCapitalize="off"
         name="answer"
         component="input"
         type="text"
-        placeholder="Enter your answer"
+        placeholder="Enter answer here..."
       />
     </form>
   </div>

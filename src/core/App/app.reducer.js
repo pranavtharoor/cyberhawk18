@@ -13,7 +13,6 @@ const initialState = {
   loggedIn: false,
   loading: true,
   gameData: {
-    name: '',
     email: '',
     username: '',
     question: {

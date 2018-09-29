@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Playground from 'Src/modules/Playground';
 import Hints from 'Src/modules/Hints';
 import Tries from 'Src/modules/Tries';
+import Stats from 'Src/modules/Stats';
+import './game.scss';
 
 class Game extends Component {
   static propTypes = {
@@ -15,10 +17,17 @@ class Game extends Component {
 
   render() {
     return (
-      <div>
-        <Playground />
-        <Hints />
-        <Tries />
+      <div className="game-page">
+        <div>
+          <Hints />
+        </div>
+        <div>
+          <Playground />
+        </div>
+        <div>
+          <Tries />
+        </div>
+        {false && <Stats />}
       </div>
     );
   }

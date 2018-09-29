@@ -1,5 +1,6 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const { InjectManifest } = require('workbox-webpack-plugin');
 
 module.exports = {
   module: {
@@ -35,6 +36,9 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: './src/index.html',
       filename: './index.html'
+    }),
+    new InjectManifest({
+      swSrc: './src/sw.js'
     })
   ],
   node: {

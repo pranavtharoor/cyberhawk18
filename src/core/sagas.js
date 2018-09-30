@@ -17,7 +17,8 @@ function* init() {
     yield put(action('SET_LOGGED_IN', true));
   if (
     localStorage.getItem('avatar') === 'male' ||
-    localStorage.getItem('avatar') === 'female'
+    localStorage.getItem('avatar') === 'female' ||
+    localStorage.getItem('avatar') === 'hawk'
   ) {
     yield put(action('SET_AVATAR', localStorage.getItem('avatar')));
   }

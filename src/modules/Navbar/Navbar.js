@@ -24,9 +24,12 @@ class Navbar extends Component {
         <div
           className={`avatar ${this.props.avatar}`}
           style={{
-            'background-image': `url('https://avatars.dicebear.com/v2/${
-              this.props.avatar
-            }/${this.props.username}.svg')`
+            backgroundImage:
+              this.props.avatar === 'hawk'
+                ? `url('https://cyberhawk.iecsemanipal.com/assets/hawk.png')`
+                : `url('https://avatars.dicebear.com/v2/${this.props.avatar}/${
+                    this.props.username
+                  }.svg')`
           }}
         >
           <div className="dropdown-container">
@@ -57,7 +60,7 @@ class Navbar extends Component {
                     )
                   }
                   style={{
-                    'background-image': `url('https://avatars.dicebear.com/v2/${
+                    backgroundImage: `url('https://avatars.dicebear.com/v2/${
                       this.props.avatar === 'female' ? 'identicon' : 'female'
                     }/${this.props.username}.svg')`
                   }}
@@ -69,7 +72,7 @@ class Navbar extends Component {
                     )
                   }
                   style={{
-                    'background-image': `url('https://avatars.dicebear.com/v2/${
+                    backgroundImage: `url('https://avatars.dicebear.com/v2/${
                       this.props.avatar === 'male' ? 'identicon' : 'male'
                     }/${this.props.username}.svg')`
                   }}

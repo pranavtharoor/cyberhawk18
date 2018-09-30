@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './stats.scss';
 
 class Stats extends Component {
   static propTypes = {
@@ -18,13 +19,16 @@ class Stats extends Component {
 
   render() {
     return (
-      <div>
-        {this.props.totalPlayers}
-        {this.props.leading}
-        {this.props.onPar}
-        {this.props.trailing}
-        {this.props.answerAttempts}
-        {this.props.highestLevelBreached}
+      <div className="stats-container">
+        <div className="heading">Stats</div>
+        <div className="stats">
+          <div>Total Players: {this.props.totalPlayers}</div>
+          <div>Leading: {this.props.leading}</div>
+          <div>On Par: {this.props.onPar}</div>
+          <div>Trailing: {this.props.trailing}</div>
+          <div>Answer Attempts: {this.props.answerAttempts}</div>
+          <div>Highest Level Breached: {this.props.highestLevelBreached}</div>
+        </div>
       </div>
     );
   }

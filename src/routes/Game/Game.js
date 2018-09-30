@@ -20,14 +20,15 @@ class Game extends Component {
       <div className="game-page">
         <div>
           <Hints />
+          <Tries />
         </div>
         <div>
           <Playground />
         </div>
         <div>
-          <Tries />
+          <Stats />
+          <Hints />
         </div>
-        {false && <Stats />}
       </div>
     );
   }

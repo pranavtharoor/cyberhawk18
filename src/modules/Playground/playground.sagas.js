@@ -1,8 +1,11 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { delay } from 'redux-saga';
 import { request, action } from 'Src/utils';
+import { reset } from 'redux-form';
 
 function* checkAnswer({ payload }) {
+  if (!payload.answer) return;
+  yield put(reset('playground'));
   const data = yield call(request, '/checkans', payload);
   if (data.success) {
     yield put(

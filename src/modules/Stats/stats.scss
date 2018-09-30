@@ -1,6 +1,6 @@
 @import 'Src/core/common.scss';
 
-.hints-container {
+.stats-container {
   height: 100%;
   width: 100%;
   @include card();
@@ -12,7 +12,7 @@
     @include heading();
   }
 
-  .hints {
+  .stats {
     background: $color-light;
     height: calc(100% - 55px);
     padding: 10px;

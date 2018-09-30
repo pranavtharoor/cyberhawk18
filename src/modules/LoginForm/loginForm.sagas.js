@@ -3,13 +3,19 @@ import { delay } from 'redux-saga';
 import { request, action } from 'Src/utils';
 
 function* login({ payload }) {
-  const data = yield call(request, '/login', payload.data);
-  if (data.success) {
-    yield put(action('SET_SNACKBAR', { type: 'success', message: data.msg }));
-    yield put(action('SET_LOGGED_IN', true));
-    yield payload.push('/');
-  } else
-    yield put(action('SET_SNACKBAR', { type: 'danger', message: data.msg }));
+  if (!payload.data.username || !payload.data.password)
+    yield put(
+      action('SET_SNACKBAR', { type: 'danger', message: 'Fill all fields' })
+    );
+  else {
+    const data = yield call(request, '/login', payload.data);
+    if (data.success) {
+      yield put(action('SET_SNACKBAR', { type: 'success', message: data.msg }));
+      yield put(action('SET_LOGGED_IN', true));
+      yield payload.push('/');
+    } else
+      yield put(action('SET_SNACKBAR', { type: 'danger', message: data.msg }));
+  }
   yield delay(3000);
   yield put(action('CLEAR_SNACKBAR'));
 }

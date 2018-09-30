@@ -2,6 +2,7 @@ import withAuth from 'Src/enhancers/withAuth';
 import Login from './Login';
 import Register from './Register';
 import Game from './Game';
+import ForgotPassword from './ForgotPassword';
 
 export default [
   {
@@ -13,6 +14,11 @@ export default [
     name: 'Register',
     pathname: '/register',
     component: withAuth(Register, false)
+  },
+  {
+    name: 'ForgotPassword',
+    pathname: '/forgotpassword',
+    component: withAuth(ForgotPassword, false)
   },
   {
     name: 'Game',

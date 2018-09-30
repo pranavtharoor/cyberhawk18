@@ -4,12 +4,14 @@ import { action } from 'Src/utils';
 import Navbar from './Navbar';
 
 const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(action('FETCH_LOGOUT_BEGIN'))
+  logout: () => dispatch(action('FETCH_LOGOUT_BEGIN')),
+  setAvatar: avatar => dispatch(action('SET_AVATAR', avatar))
 });
 
 const mapStateToProps = state => ({
   ...pick(['loggedIn'], state.common),
   ...pick(['username'], state.common.gameData),
+  ...pick(['avatar'], state.common.gameData),
   ...pick(['level'], state.common.gameData.question)
 });
 

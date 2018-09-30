@@ -3,8 +3,7 @@ import { action } from 'Src/utils';
 import ForgotPasswordForm from './ForgotPasswordForm';
 
 const mapDispatchToProps = dispatch => ({
-  onForgotPasswordSubmit: data =>
-    dispatch(action('FETCH_FORGOT_PASSWORD_BEGIN', data))
+  onSubmit: data => dispatch(action('FETCH_FORGOT_PASSWORD_BEGIN', data))
 });
 
 const mapStateToProps = () => ({});

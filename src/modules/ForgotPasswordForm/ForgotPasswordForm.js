@@ -4,15 +4,14 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
 let ForgotPasswordForm = props => (
-  <form onSubmit={props.onForgotPasswordSubmit}>
+  <form onSubmit={props.handleSubmit}>
     <Field name="email" component="input" type="email" placeholder="Email" />
     <button>Forgot</button>
   </form>
 );
 
 ForgotPasswordForm.propTypes = {
-  handleSubmit: PropTypes.func.isRequired,
-  onForgotPasswordSubmit: PropTypes.func.isRequired
+  handleSubmit: PropTypes.func.isRequired
 };
 
 ForgotPasswordForm = reduxForm({

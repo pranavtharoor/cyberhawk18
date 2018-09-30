@@ -18,10 +18,13 @@
     padding: 10px;
     text-align: left;
     word-wrap: none;
-    overflow: auto;
+    overflow-y: auto;
     @include scrollbar();
 
     & > div {
+      overflow-x: hidden;
+      overflow-wrap: break-word;
+      width: 100%;
       padding: 3px;
       border-bottom: solid thin rgba(100, 100, 100, 0.2);
     }

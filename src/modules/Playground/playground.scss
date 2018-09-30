@@ -12,7 +12,10 @@
     background: $color-light;
     padding: 20px 20px 60px;
     height: calc(100% - 55px);
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+    width: 100%;
     @include scrollbar();
 
     .question {

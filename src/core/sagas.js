@@ -2,6 +2,7 @@ import { all, put } from 'redux-saga/effects';
 import { navbarSaga } from 'Src/modules/Navbar';
 import { loginFormSaga } from 'Src/modules/LoginForm';
 import { registerFormSaga } from 'Src/modules/RegisterForm';
+import { forgotPasswordFormSaga } from 'Src/modules/ForgotPasswordForm';
 import { playgroundSaga } from 'Src/modules/Playground';
 import { hintsSaga } from 'Src/modules/Hints';
 import { triesSaga } from 'Src/modules/Tries';
@@ -14,6 +15,12 @@ function* init() {
     console.log('🍪🍪🍪 cookies:', document.cookie || 'none');
   if (document.cookie.includes('session'))
     yield put(action('SET_LOGGED_IN', true));
+  if (
+    localStorage.getItem('avatar') === 'male' ||
+    localStorage.getItem('avatar') === 'female'
+  ) {
+    yield put(action('SET_AVATAR', localStorage.getItem('avatar')));
+  }
   yield put(action('SET_LOADING', false));
 }
 
@@ -23,6 +30,7 @@ export function* rootSaga() {
     navbarSaga(),
     loginFormSaga(),
     registerFormSaga(),
+    forgotPasswordFormSaga(),
     gameSaga(),
     statsSaga(),
     playgroundSaga(),

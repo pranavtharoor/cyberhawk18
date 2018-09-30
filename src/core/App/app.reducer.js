@@ -6,13 +6,18 @@ const actionHandlers = {
     ...s,
     gameData: { ...s.gameData, ...a.payload }
   }),
-  SET_LOADING: (s, a) => ({ ...s, loading: a.payload })
+  SET_LOADING: (s, a) => ({ ...s, loading: a.payload }),
+  SET_AVATAR: (s, a) => ({
+    ...s,
+    gameData: { ...s.gameData, avatar: a.payload }
+  })
 };
 
 const initialState = {
   loggedIn: false,
   loading: true,
   gameData: {
+    avatar: 'identicon',
     email: '',
     username: '',
     question: {

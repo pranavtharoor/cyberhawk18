@@ -13,8 +13,14 @@ function* logout() {
   yield put(action('CLEAR_SNACKBAR'));
 }
 
+function* setAvatar({ payload }) {
+  if (payload === 'male' || payload === 'female')
+    yield localStorage.setItem('avatar', payload);
+}
+
 function* navbarSaga() {
   yield takeLatest('FETCH_LOGOUT_BEGIN', logout);
+  yield takeLatest('SET_AVATAR', setAvatar);
 }
 
 export default navbarSaga;

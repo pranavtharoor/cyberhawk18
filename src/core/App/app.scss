@@ -14,16 +14,26 @@ button {
 body {
   margin: 0;
   min-height: 100vh;
-  background: url('https://cyberhawk.iecsemanipal.com/assets/bg1.png');
 
   .app-container {
-    &.background {
-      background-position: bottom left;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-    }
-
+    height: 100vh;
+    overflow-y: auto;
+    background: url('../../public/landing.png');
+    background-position: center center;
+    background-size: cover;
     min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    .app-container {
+      background: url('../../public/landingm.png');
+      height: 100vh;
+      overflow-y: auto;
+      background-position: center center;
+      background-size: cover;
+      min-height: 100vh;
+    }
   }
 }

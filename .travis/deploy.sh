@@ -1,6 +1,6 @@
 #!/bin/bash
 set -x
-if [ $TRAVIS_BRANCH == 'master' && "${TRAVIS_PULL_REQUEST}" = "false" ] ; then
+if [ $TRAVIS_BRANCH == 'master' && "${TRAVIS_PULL_REQUEST}" == "false" ] ; then
     cd dist
     git init
 

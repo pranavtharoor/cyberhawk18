@@ -85,10 +85,10 @@ class Navbar extends Component {
     ) : (
       <div className="navbar loggedout">
         <NavLink exact={true} to="/login" activeClassName="active">
-          Login
+          LOGIN
         </NavLink>
         <NavLink exact={true} to="/register" activeClassName="active">
-          Register
+          REGISTER
         </NavLink>
       </div>
     );

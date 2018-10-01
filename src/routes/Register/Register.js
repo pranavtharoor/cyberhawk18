@@ -1,9 +1,12 @@
 import React from 'react';
 import RegisterForm from 'Src/modules/RegisterForm';
+import './register.scss';
 
 const Register = () => (
-  <div>
-    Register<RegisterForm />
+  <div className="register-page">
+    <div className="form-container">
+      <RegisterForm />
+    </div>
   </div>
 );
 

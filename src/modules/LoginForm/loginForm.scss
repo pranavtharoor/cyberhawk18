@@ -1,0 +1,44 @@
+@import 'Src/core/common.scss';
+
+.login-form {
+  height: 100%;
+  width: 100%;
+  color: $color-light;
+  padding: 30px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding-top: calc(50vh - 150px);
+
+  .form {
+    form {
+      input {
+        border: none;
+        padding: 15px 20px;
+        width: 100%;
+        margin: 20px 0;
+        font-size: 1.1rem;
+        background: transparent;
+        border-style: none none solid none;
+        border-width: 2px;
+        color: #ffffff;
+
+        &:focus {
+          outline: none;
+        }
+
+        &::placeholder {
+          color: #eeeeee;
+        }
+      }
+
+      button {
+        border-radius: 2px;
+        padding: 15px 30px;
+        border: none;
+        background: #dfdfdf;
+        margin-top: 15px;
+        font-size: 1rem;
+      }
+    }
+  }
+}

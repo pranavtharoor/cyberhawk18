@@ -3,7 +3,7 @@
 .navbar {
   &.loggedin {
     display: flex;
-    padding: 30px 2.5vw;
+    padding: 15px 2.5vw 0;
 
     & > div {
       background: $color-dark;
@@ -38,8 +38,8 @@
         display: block;
         position: absolute;
         right: 0px;
-        top: 0px;
-        padding: 50px 50px 30px 30px;
+        top: -10px;
+        padding: 10px 50px 30px 30px;
         z-index: 1000;
 
         .dropdown {
@@ -89,8 +89,24 @@
   }
 
   &:not(.loggedin) {
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-left: 20px;
+
+    & > * {
+      text-decoration: none;
+      color: $color-light;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 30px;
+    }
+
     .active {
-      color: white;
+      display: none;
     }
   }
 }

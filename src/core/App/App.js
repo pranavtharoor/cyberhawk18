@@ -40,6 +40,7 @@ const App = props => (
         }}
       >
         <Navbar />
+        {!props.loggedIn && <div className="hr" />}
         <Switch>
           {routes.map(route => (
             <Route

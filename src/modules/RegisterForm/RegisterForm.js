@@ -2,6 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
+import './registerForm.scss';
 
 const registerValidate = values => {
   const errors = {};
@@ -40,34 +41,48 @@ RegisterField.propTypes = {
 };
 
 let RegisterForm = props => (
-  <form
-    onSubmit={props.handleSubmit(data =>
-      props.onRegister({ data, push: props.history.push })
-    )}
-  >
-    <Field
-      name="username"
-      component={RegisterField}
-      type="text"
-      label="Username"
-    />
-    <Field
-      name="password"
-      component={RegisterField}
-      type="password"
-      label="Password"
-    />
-    <Field name="name" component={RegisterField} type="text" label="Name" />
-    <Field name="email" component={RegisterField} type="email" label="Email" />
-    <Field name="tel" component={RegisterField} type="number" label="Mobile" />
-    <Field
-      name="college"
-      component={RegisterField}
-      type="text"
-      label="College"
-    />
-    <button>Register</button>
-  </form>
+  <div className="register-form">
+    <div className="form">
+      <form
+        onSubmit={props.handleSubmit(data =>
+          props.onRegister({ data, push: props.history.push })
+        )}
+      >
+        <Field
+          name="username"
+          component={RegisterField}
+          type="text"
+          label="Username"
+        />
+        <Field
+          name="password"
+          component={RegisterField}
+          type="password"
+          label="Password"
+        />
+        <Field name="name" component={RegisterField} type="text" label="Name" />
+        <Field
+          name="email"
+          component={RegisterField}
+          type="email"
+          label="Email"
+        />
+        <Field
+          name="tel"
+          component={RegisterField}
+          type="number"
+          label="Mobile"
+        />
+        <Field
+          name="college"
+          component={RegisterField}
+          type="text"
+          label="College"
+        />
+        <button>REGISTER</button>
+      </form>
+    </div>
+  </div>
 );
 
 RegisterForm.propTypes = {

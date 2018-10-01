@@ -22,6 +22,12 @@ body {
     background-position: center center;
     background-size: cover;
     min-height: 100vh;
+
+    .hr {
+      border-bottom: solid thin rgba(255, 255, 255, 0.2);
+      width: calc(100% - 40px);
+      margin-left: 40px;
+    }
   }
 }
 

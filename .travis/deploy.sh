@@ -1,6 +1,6 @@
 #!/bin/bash
 set -x
-if [ $TRAVIS_BRANCH == 'master' ] ; then
+if [ $TRAVIS_BRANCH == 'master' && "${TRAVIS_PULL_REQUEST}" = "false" ] ; then
     cd dist
     git init
 
@@ -10,5 +10,5 @@ if [ $TRAVIS_BRANCH == 'master' ] ; then
     git commit -m "Deploy"
     git push --force deploy master
 else
-    echo "Non master branch. Not deploying."
+    echo "Not deploying."
 fi

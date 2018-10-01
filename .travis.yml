@@ -1,10 +1,10 @@
 language: node_js
 node_js:
-  - "8.10.0"
+- 8.10.0
 before_install:
-  - .travis/install.sh
+- ".travis/install.sh"
 script:
-  - .travis/build.sh
-  - .travis/test.sh
+- ".travis/build.sh"
+- ".travis/test.sh"
 after_success:
-  - .travis/deploy.sh
+- ".travis/deploy.sh"

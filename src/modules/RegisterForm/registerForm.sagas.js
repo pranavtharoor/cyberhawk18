@@ -3,7 +3,11 @@ import { delay } from 'redux-saga';
 import { request, action } from 'Src/utils';
 
 function* register({ payload }) {
-  const data = yield call(request, '/register', payload.data);
+  if (!payload.data.captcharesponse) return;
+  const data = yield call(request, '/register', {
+    captcha: payload.data.captcharesponse,
+    user: payload.data
+  });
   if (data.success) {
     yield put(action('SET_SNACKBAR', { type: 'success', message: data.msg }));
     yield payload.push('/login');

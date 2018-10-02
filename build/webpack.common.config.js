@@ -1,6 +1,6 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
-const { InjectManifest } = require('workbox-webpack-plugin');
 
 module.exports = {
   module: {
@@ -37,9 +37,7 @@ module.exports = {
       template: './src/index.html',
       filename: './index.html'
     }),
-    new InjectManifest({
-      swSrc: './src/sw.js'
-    })
+    new CopyWebpackPlugin([{ from: './src/sw.js', to: './' }])
   ],
   node: {
     fs: 'empty'

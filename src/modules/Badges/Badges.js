@@ -29,7 +29,7 @@ class Badges extends Component {
               <div key={`badge_${i}`}>
                 <img
                   src={
-                    'Right Of Passage' === badge
+                    'Rite Of Passage' === badge
                       ? RightOfPassage
                       : 'First Blood' === badge
                         ? FirstBlood

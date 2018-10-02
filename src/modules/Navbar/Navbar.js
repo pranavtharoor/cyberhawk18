@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
+import { requestPushNotifications } from 'Src/utils';
 import './navbar.scss';
 
 class Navbar extends Component {
@@ -35,6 +36,9 @@ class Navbar extends Component {
           <div className="dropdown-container">
             <div className="dropdown">
               <div className="menu">
+                <button onClick={requestPushNotifications}>
+                  Notifications
+                </button>
                 <div
                   className="name"
                   onClick={() =>

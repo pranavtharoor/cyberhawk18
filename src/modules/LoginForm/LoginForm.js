@@ -13,6 +13,8 @@ let LoginForm = props => (
         )}
       >
         <Field
+          autoComplete="off"
+          autoCapitalize="off"
           name="username"
           component="input"
           type="text"

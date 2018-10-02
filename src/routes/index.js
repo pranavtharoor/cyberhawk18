@@ -3,6 +3,7 @@ import Login from './Login';
 import Register from './Register';
 import Game from './Game';
 import ForgotPassword from './ForgotPassword';
+import SetPassword from './SetPassword';
 
 export default [
   {
@@ -19,6 +20,11 @@ export default [
     name: 'ForgotPassword',
     pathname: '/forgotpassword',
     component: withAuth(ForgotPassword, false)
+  },
+  {
+    name: 'SetPassword',
+    pathname: '/setpassword',
+    component: withAuth(SetPassword, false)
   },
   {
     name: 'Game',

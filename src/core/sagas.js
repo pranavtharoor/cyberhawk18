@@ -3,6 +3,7 @@ import { navbarSaga } from 'Src/modules/Navbar';
 import { loginFormSaga } from 'Src/modules/LoginForm';
 import { registerFormSaga } from 'Src/modules/RegisterForm';
 import { forgotPasswordFormSaga } from 'Src/modules/ForgotPasswordForm';
+import { setPasswordFormSaga } from 'Src/modules/SetPasswordForm';
 import { playgroundSaga } from 'Src/modules/Playground';
 import { hintsSaga } from 'Src/modules/Hints';
 import { badgesSaga } from 'Src/modules/Badges';
@@ -33,6 +34,7 @@ export function* rootSaga() {
     loginFormSaga(),
     registerFormSaga(),
     forgotPasswordFormSaga(),
+    setPasswordFormSaga(),
     gameSaga(),
     statsSaga(),
     playgroundSaga(),

@@ -4,10 +4,6 @@ firebase.initializeApp({
   messagingSenderId: '111832885118'
 });
 const messaging = firebase.messaging();
-messaging.onMessage(function(payload) {
-  console.log('Message received. ', payload);
-  // ...
-});
 messaging.setBackgroundMessageHandler(function(payload) {
   console.log('[sw.js] Received background message ', payload);
   // Customize notification here

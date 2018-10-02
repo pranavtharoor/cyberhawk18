@@ -2,6 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
+import './setPasswordForm.scss';
 
 let SetPasswordForm = props => (
   <div className="set-password-form">
@@ -18,7 +19,7 @@ let SetPasswordForm = props => (
           name="password"
           component="input"
           type="password"
-          placeholder="PASSWORD"
+          placeholder="NEW PASSWORD"
         />
         <br />
         <button>RESET PASSWORD</button>

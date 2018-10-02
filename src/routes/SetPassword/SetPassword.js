@@ -20,8 +20,10 @@ class SetPassword extends Component {
 
   render() {
     return (
-      <div>
-        <SetPasswordForm token={this.state.token} />
+      <div className="set-password-page">
+        <div className="form-container">
+          <SetPasswordForm token={this.state.token} />
+        </div>
       </div>
     );
   }

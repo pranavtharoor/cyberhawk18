@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { withRouter, NavLink } from 'react-router-dom';
 import './loginForm.scss';
 
 let LoginForm = props => (
@@ -27,6 +27,11 @@ let LoginForm = props => (
         />
         <br />
         <button>LOGIN</button>
+        <br />
+        <br />
+        <NavLink exact={true} to="/forgotpassword" activeClassName="active">
+          <div className="forgot">Forgot Password?</div>
+        </NavLink>
       </form>
     </div>
   </div>

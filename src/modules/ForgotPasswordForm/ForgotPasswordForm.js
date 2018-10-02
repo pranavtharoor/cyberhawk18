@@ -2,12 +2,22 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
+import './forgotPasswordForm.scss';
 
 let ForgotPasswordForm = props => (
-  <form onSubmit={props.handleSubmit}>
-    <Field name="email" component="input" type="email" placeholder="Email" />
-    <button>Forgot</button>
-  </form>
+  <div className="forgot-password-form">
+    <div className="form">
+      <form onSubmit={props.handleSubmit}>
+        <Field
+          name="email"
+          component="input"
+          type="email"
+          placeholder="EMAIL"
+        />
+        <button>FORGOT</button>
+      </form>
+    </div>
+  </div>
 );
 
 ForgotPasswordForm.propTypes = {

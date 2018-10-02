@@ -3,9 +3,17 @@ import { delay } from 'redux-saga';
 import { request, action } from 'Src/utils';
 
 function* setPassword({ payload }) {
-  if (!payload.data.password || !payload.data.token)
+  if (
+    !payload.data.password ||
+    !payload.data.token ||
+    payload.data.password.length < 8 ||
+    payload.data.password.length > 30
+  )
     yield put(
-      action('SET_SNACKBAR', { type: 'danger', message: 'Fill all fields' })
+      action('SET_SNACKBAR', {
+        type: 'danger',
+        message: 'Password must be 8 - 30 charaters long'
+      })
     );
   else {
     const data = yield call(request, '/setPassword', payload.data);

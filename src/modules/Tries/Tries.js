@@ -17,9 +17,13 @@ class Tries extends Component {
       <div className="tries-container">
         <div className="heading">Recent Tries</div>
         <div className="tries">
-          {this.props.tries.map((recentTry, i) => (
-            <div key={`recentTry_${i}`}>{recentTry}</div>
-          ))}
+          {this.props.tries.length > 0 ? (
+            this.props.tries.map((recentTry, i) => (
+              <div key={`recentTry_${i}`}>{recentTry}</div>
+            ))
+          ) : (
+            <div className="nodata">No tries to show</div>
+          )}
         </div>
       </div>
     );

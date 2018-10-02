@@ -8,6 +8,8 @@ import './registerForm.scss';
 const registerValidate = values => {
   const errors = {};
   if (!values.username) errors.username = 'Required';
+  else if (!/^[a-zA-Z0-9]*$/.test(values.username))
+    errors.username = 'Must be alphanumeric. Cannot contain spaces.';
   else if (values.username.length > 30 || values.username.length < 3)
     errors.username = 'Must be 3 - 30 characters long';
   if (!values.email) errors.email = 'Required';

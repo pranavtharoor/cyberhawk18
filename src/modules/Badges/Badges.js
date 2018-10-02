@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-// import BeginnersLuck from 'Src/public/BeginnersLuck.png';
-// import Conqueror from 'Src/public/Conqueror.png';
+import BeginnersLuck from 'Src/public/BeginnersLuck.png';
+import Conqueror from 'Src/public/Conqueror.png';
 import Edison from 'Src/public/Edison.png';
-// import Finisher from 'Src/public/Finisher.png';
-// import FirstBlood from 'Src/public/FirstBlood.png';
+import Finisher from 'Src/public/Finisher.png';
+import FirstBlood from 'Src/public/FirstBlood.png';
 import RightOfPassage from 'Src/public/RiteOfPassage.png';
-// import Survivor from 'Src/public/Survivor.png';
+import Survivor from 'Src/public/Survivor.png';
 import './badges.scss';
 
 class Badges extends Component {
@@ -28,7 +28,25 @@ class Badges extends Component {
             {this.props.badges.map((badge, i) => (
               <div key={`badge_${i}`}>
                 <img
-                  src={'Right Of Passage' === badge ? RightOfPassage : Edison}
+                  src={
+                    'Right Of Passage' === badge
+                      ? RightOfPassage
+                      : 'First Blood' === badge
+                        ? FirstBlood
+                        : 'Over 9000' === badge
+                          ? Edison
+                          : 'Edison' === badge
+                            ? Edison
+                            : "Beginner's Luck" === badge
+                              ? BeginnersLuck
+                              : 'Survivor' === badge
+                                ? Survivor
+                                : 'Finisher' === badge
+                                  ? Finisher
+                                  : 'Conqueror' === badge
+                                    ? Conqueror
+                                    : ''
+                  }
                 />
               </div>
             ))}

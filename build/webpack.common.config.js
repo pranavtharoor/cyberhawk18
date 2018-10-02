@@ -37,7 +37,10 @@ module.exports = {
       template: './src/index.html',
       filename: './index.html'
     }),
-    new CopyWebpackPlugin([{ from: './src/sw.js', to: './' }])
+    new CopyWebpackPlugin([
+      { from: './src/sw.js', to: './' },
+      { from: './src/public/hawk.png', to: './' }
+    ])
   ],
   node: {
     fs: 'empty'

@@ -17,7 +17,7 @@ import BG3m from 'Src/public/BG3m.png';
 const App = props => (
   <div>
     {props.loading && <Loader />}
-    <Favicon url="https://iecsemanipal.com/images/logos/logo-white.png" />
+    <Favicon url="https://cyberhawk.iecsemanipal.com/hawk.png" />
     <Router>
       <div
         className={`app-container`}

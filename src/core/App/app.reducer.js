@@ -10,10 +10,12 @@ const actionHandlers = {
   SET_AVATAR: (s, a) => ({
     ...s,
     gameData: { ...s.gameData, avatar: a.payload }
-  })
+  }),
+  SET_RULES: (s, a) => ({ ...s, rulesOpen: a.payload })
 };
 
 const initialState = {
+  rulesOpen: false,
   loggedIn: false,
   loading: true,
   gameData: {

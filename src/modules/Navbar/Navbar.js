@@ -11,7 +11,8 @@ class Navbar extends Component {
     username: PropTypes.string.isRequired,
     loggedIn: PropTypes.bool.isRequired,
     avatar: PropTypes.string.isRequired,
-    setAvatar: PropTypes.func.isRequired
+    setAvatar: PropTypes.func.isRequired,
+    openRules: PropTypes.func.isRequired
   };
 
   state = {
@@ -49,6 +50,7 @@ class Navbar extends Component {
                 >
                   {this.props.username}&nbsp;&nbsp;&nbsp;<span>▸</span>
                 </div>
+                <button onClick={this.props.openRules}>Rules</button>
                 <button className="logout" onClick={this.props.logout}>
                   Logout
                 </button>

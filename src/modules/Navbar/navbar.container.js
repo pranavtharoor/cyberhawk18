@@ -5,7 +5,8 @@ import Navbar from './Navbar';
 
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(action('FETCH_LOGOUT_BEGIN')),
-  setAvatar: avatar => dispatch(action('SET_AVATAR', avatar))
+  setAvatar: avatar => dispatch(action('SET_AVATAR', avatar)),
+  openRules: () => dispatch(action('SET_RULES', true))
 });
 
 const mapStateToProps = state => ({

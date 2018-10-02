@@ -5,7 +5,7 @@ import App from './App';
 const mapDispatchToProps = () => ({});
 
 const mapStateToProps = state => ({
-  ...pick(['loggedIn', 'loading'], state.common),
+  ...pick(['loggedIn', 'loading', 'rulesOpen'], state.common),
   ...pick(['level'], state.common.gameData.question)
 });
 

@@ -10,15 +10,18 @@ let Playground = props => (
       <div className="add-info">{props.addinfo}</div>
     </div>
     <form className="answer-contianer" onSubmit={props.handleSubmit}>
-      <Field
-        className="answer-input"
-        autoComplete="off"
-        autoCapitalize="off"
-        name="answer"
-        component="input"
-        type="text"
-        placeholder="Enter answer here..."
-      />
+      {(props.allowAnswerSubmit || window.innerWidth < 900) && (
+        <Field
+          className="answer-input"
+          autoComplete="off"
+          autoCapitalize="off"
+          autoFocus={window.innerWidth < 900 ? 'off' : 'on'}
+          name="answer"
+          component="input"
+          type="text"
+          placeholder="Enter answer here..."
+        />
+      )}
     </form>
   </div>
 );
@@ -27,7 +30,8 @@ Playground.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   question: PropTypes.string.isRequired,
-  addinfo: PropTypes.string.isRequired
+  addinfo: PropTypes.string.isRequired,
+  allowAnswerSubmit: PropTypes.bool.isRequired
 };
 
 Playground = reduxForm({

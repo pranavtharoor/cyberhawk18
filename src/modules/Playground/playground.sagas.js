@@ -6,6 +6,7 @@ import { reset } from 'redux-form';
 function* checkAnswer({ payload }) {
   if (!payload.answer) return;
   yield put(reset('playground'));
+  yield put(action('ALLOW_ANSWER_SUBMIT', false));
   const data = yield call(request, '/checkans', payload);
   if (data.success) {
     yield put(
@@ -26,6 +27,7 @@ function* checkAnswer({ payload }) {
     yield put(action('SET_SNACKBAR', { type: 'danger', message: data.msg }));
     if (data.data !== 1) yield put(action('ADD_TRY', payload.answer));
   }
+  yield put(action('ALLOW_ANSWER_SUBMIT', true));
   yield delay(3000);
   yield put(action('CLEAR_SNACKBAR'));
 }

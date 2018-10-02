@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { requestPushNotifications } from 'Src/utils';
+import hawk from 'Src/public/hawk.png';
 import './navbar.scss';
 
 class Navbar extends Component {
@@ -22,13 +23,16 @@ class Navbar extends Component {
   render() {
     return this.props.loggedIn ? (
       <div className="navbar loggedin">
-        <div className="level">LEVEL {this.props.level}</div>
+        <div className="logo">
+          <img src={hawk} />
+        </div>
+        <div className="level">LEVEL&nbsp;{this.props.level}</div>
         <div
           className={`avatar ${this.props.avatar}`}
           style={{
             backgroundImage:
               this.props.avatar === 'hawk'
-                ? `url('https://cyberhawk.iecsemanipal.com/assets/hawk.png')`
+                ? `url('https://cyberhawk.iecsemanipal.com/hawk.png')`
                 : `url('https://avatars.dicebear.com/v2/${this.props.avatar}/${
                     this.props.username
                   }.svg')`

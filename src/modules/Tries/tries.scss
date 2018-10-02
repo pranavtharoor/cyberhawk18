@@ -30,7 +30,7 @@
       align-items: center;
     }
 
-    & > div {
+    & > div:not(.nodata) {
       overflow-x: hidden;
       overflow-wrap: break-word;
       width: 100%;

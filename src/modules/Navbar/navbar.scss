@@ -3,9 +3,10 @@
 .navbar {
   &.loggedin {
     display: flex;
+    justify-content: space-between;
     padding: 15px 2.5vw 0;
 
-    & > div {
+    & > div:not(.logo) {
       background: $color-dark;
       color: $color-light;
       padding: 10px 20px;
@@ -14,12 +15,29 @@
       font-size: 1.3rem;
     }
 
+    .logo {
+      position: relative;
+
+      img {
+        top: 5px;
+        height: 75px;
+      }
+
+      @media only screen and (max-width: 900px) {
+        & {
+          display: none;
+        }
+      }
+    }
+
     .avatar {
       @include card();
       margin-left: auto;
       border-radius: 0px;
       position: relative;
       height: 45px;
+      min-height: 45px;
+      min-width: 45px;
       width: 45px;
       background-repeat: no-repeat;
       background-position: center center;
@@ -28,6 +46,12 @@
       &.male,
       &.female {
         background-size: 70%;
+      }
+
+      &.hawk {
+        background-size: 100%;
+        background-color: $color-light;
+        border-radius: 50%;
       }
 
       .dropdown-container {

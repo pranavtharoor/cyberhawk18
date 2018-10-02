@@ -8,7 +8,8 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = state => ({
-  ...pick(['question', 'addinfo'], state.common.gameData.question)
+  ...pick(['question', 'addinfo'], state.common.gameData.question),
+  ...pick(['allowAnswerSubmit'], state.playground)
 });
 
 export default connect(

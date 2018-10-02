@@ -20,6 +20,7 @@ function* checkAnswer({ payload }) {
       yield put(action('CLEAR_TRIES'));
       yield put(action('FETCH_STATS_BEGIN'));
       yield put(action('FETCH_HINTS_BEGIN'));
+      yield put(action('FETCH_BADGES_BEGIN'));
     } else yield put(action('ADD_TRY', payload.answer));
   } else
     yield put(action('SET_SNACKBAR', { type: 'danger', message: data.msg }));

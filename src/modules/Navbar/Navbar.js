@@ -43,7 +43,7 @@ class Navbar extends Component {
                     })
                   }
                 >
-                  {this.props.username}
+                  {this.props.username}&nbsp;&nbsp;&nbsp;<span>▸</span>
                 </div>
                 <button className="logout" onClick={this.props.logout}>
                   Logout

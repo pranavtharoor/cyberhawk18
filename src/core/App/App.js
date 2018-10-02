@@ -7,6 +7,7 @@ import routes from 'Src/routes';
 import Navbar from 'Src/modules/Navbar';
 import Snackbar from 'Src/modules/Snackbar';
 import Loader from 'Src/modules/Loader';
+import Rules from 'Src/modules/Rules';
 import BG1 from 'Src/public/BG1.png';
 import BG2 from 'Src/public/BG2.png';
 import BG3 from 'Src/public/BG3.png';
@@ -40,6 +41,7 @@ const App = props => (
         }}
       >
         <Navbar />
+        {props.rulesOpen && <Rules />}
         {!props.loggedIn && <div className="hr" />}
         <Switch>
           {routes.map(route => (
@@ -58,6 +60,7 @@ const App = props => (
 );
 
 App.propTypes = {
+  rulesOpen: PropTypes.bool.isRequired,
   loggedIn: PropTypes.bool.isRequired,
   loading: PropTypes.bool.isRequired,
   level: PropTypes.number.isRequired

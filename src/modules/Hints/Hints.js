@@ -18,9 +18,13 @@ class Hints extends Component {
       <div className="hints-container">
         <div className="heading">Hints</div>
         <div className="hints">
-          {this.props.hints.map((hint, i) => (
-            <div key={`hint_${i}`}>{hint}</div>
-          ))}
+          {this.props.hints.length > 0 ? (
+            this.props.hints.map((hint, i) => (
+              <div key={`hint_${i}`}>{hint}</div>
+            ))
+          ) : (
+            <div className="nodata">No hints to show</div>
+          )}
         </div>
       </div>
     );

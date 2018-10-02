@@ -1,0 +1,38 @@
+@import 'Src/core/common.scss';
+
+.badges-container {
+  height: 100%;
+  width: 100%;
+  @include card();
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+
+  .heading {
+    @include heading();
+  }
+
+  .badges {
+    background: $color-light;
+    height: calc(100% - 55px);
+    overflow-y: auto;
+    @include scrollbar();
+
+    .flex-container {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: flex-start;
+
+      & > div {
+        height: 85px;
+        padding-top: 5px;
+
+        img {
+          width: 100px;
+        }
+      }
+    }
+  }
+}

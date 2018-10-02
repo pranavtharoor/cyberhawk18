@@ -50,12 +50,17 @@
           display: flex;
 
           .menu {
+            .name {
+              display: flex;
+              justify-content: space-between;
+              padding: 10px 20px;
+            }
+
             & > * {
               cursor: pointer;
               font-size: 1.1rem;
               padding: 10px 30px;
               width: 100%;
-              text-align: center;
             }
           }
 

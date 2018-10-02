@@ -4,6 +4,7 @@ import Playground from 'Src/modules/Playground';
 import Hints from 'Src/modules/Hints';
 import Tries from 'Src/modules/Tries';
 import Stats from 'Src/modules/Stats';
+import Badges from 'Src/modules/Badges';
 import './game.scss';
 
 class Game extends Component {
@@ -27,7 +28,7 @@ class Game extends Component {
         </div>
         <div>
           <Stats />
-          <Hints />
+          <Badges />
         </div>
       </div>
     );

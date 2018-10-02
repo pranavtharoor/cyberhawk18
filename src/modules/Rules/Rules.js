@@ -20,10 +20,10 @@ const Rules = props => (
       </li>
       <li>
         If the answer is &#34;22 Cakes&#34; then the answer you should write is
-        &#34;twotwocakes&#34;. All numbers are in words, no spaces, and no
-        special characters. If the answer contains special characters, replace
-        them to the nearest character. For example, &#x27;&#x101;&#x27; becomes
-        &#x27;a&#x27;.
+        &#34;twotwocakes&#34;. If the answer contains special characters,
+        replace them to the nearest character. For example, &#x27;&#x101;&#x27;
+        becomes &#x27;a&#x27;. If the answer is &#x27;Steve Jobs&#x27; then the
+        answer you should write is &#x27;steve paul jobs&#x27;.
       </li>
       <li>
         All names, places, organizations, things will be as written on Wikipedia
@@ -34,15 +34,15 @@ const Rules = props => (
         will not find anything hidden in the codebase of the game.
       </li>
       <li>
-        Everyone will receive e-certificates. Winners will win a cash prize and
-        physical certificate. Physical prizes are limited to Manipal University
-        students.
+        Top participants will receive e-certificates. Winners will win a cash
+        prize and physical certificate. Physical prizes are limited to Manipal
+        University students.
       </li>
       <li>
         The CyberHawk organizers have final say and authority for any disputes.
       </li>
       <li>
-        All concerns should be raised to &#x27;HawkEye by IECSE&#x27; page on
+        All concerns should be raised to &#x27;CyberHawk by IECSE&#x27; page on
         Facebook.
       </li>
     </ul>

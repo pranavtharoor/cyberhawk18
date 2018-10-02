@@ -46,6 +46,8 @@
       &.male,
       &.female {
         background-size: 70%;
+        background-repeat: no-repeat;
+        background-position: center center;
       }
 
       &.hawk {

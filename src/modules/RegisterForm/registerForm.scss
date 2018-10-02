@@ -4,18 +4,26 @@
   height: 100%;
   width: 100%;
   color: $color-light;
-  padding: 30px;
+  padding: 10px 30px;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.2);
   overflow-y: auto;
 
   .form {
     form {
+      input[type='number']::-webkit-inner-spin-button,
+      input[type='number']::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        margin: 0;
+      }
+
       input {
         border: none;
-        padding: 15px 20px;
+        padding: 10px 10px;
         width: 100%;
-        margin: 10px 0;
+        margin: 5px 0;
         font-size: 1.1rem;
         background: transparent;
         border-style: none none solid none;
@@ -29,6 +37,13 @@
         &::placeholder {
           color: #eeeeee;
         }
+      }
+
+      .error {
+        color: pink;
+        height: 15px;
+        font-size: 12px;
+        display: block;
       }
 
       button {

@@ -2,8 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import ReCAPTCHA from 'react-google-recaptcha';
-import captchaConfig from 'Config/recaptcha';
+import Captcha from 'Src/modules/Captcha';
 import './registerForm.scss';
 
 const registerValidate = values => {
@@ -28,7 +27,7 @@ const registerValidate = values => {
 let RegisterField = ({ input, label, type, meta: { touched, error } }) => (
   <div>
     <input {...input} placeholder={label} type={type} />
-    {touched && (error && <span>{error}</span>)}
+    <span className="error">{touched && (error && error)}</span>
   </div>
 );
 
@@ -41,27 +40,6 @@ RegisterField.propTypes = {
     error: PropTypes.string
   })
 };
-
-class Captcha extends React.Component {
-  static propTypes = {
-    input: PropTypes.object.isRequired
-  };
-
-  componentDidMount() {
-    this.captcha.execute();
-  }
-
-  render() {
-    return (
-      <ReCAPTCHA
-        ref={el => (this.captcha = el)}
-        size="invisible"
-        sitekey={captchaConfig.sitekey}
-        onChange={this.props.input.onChange}
-      />
-    );
-  }
-}
 
 let RegisterForm = props => (
   <div className="register-form">
@@ -102,8 +80,8 @@ let RegisterForm = props => (
           type="text"
           label="College"
         />
-        <button>REGISTER</button>
         <Field name="captcharesponse" component={Captcha} />
+        <button>REGISTER</button>
       </form>
     </div>
   </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
+import Captcha from 'Src/modules/Captcha';
 import './forgotPasswordForm.scss';
 
 let ForgotPasswordForm = props => (
@@ -14,6 +15,7 @@ let ForgotPasswordForm = props => (
           type="email"
           placeholder="EMAIL"
         />
+        <Field name="captcha" component={Captcha} />
         <button>FORGOT</button>
       </form>
     </div>

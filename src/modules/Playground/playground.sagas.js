@@ -22,8 +22,10 @@ function* checkAnswer({ payload }) {
       yield put(action('FETCH_HINTS_BEGIN'));
       yield put(action('FETCH_BADGES_BEGIN'));
     } else yield put(action('ADD_TRY', payload.answer));
-  } else
+  } else {
     yield put(action('SET_SNACKBAR', { type: 'danger', message: data.msg }));
+    if (data.data !== 1) yield put(action('ADD_TRY', payload.answer));
+  }
   yield delay(3000);
   yield put(action('CLEAR_SNACKBAR'));
 }

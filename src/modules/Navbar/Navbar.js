@@ -41,7 +41,7 @@ class Navbar extends Component {
           <div className="dropdown-container">
             <div className="dropdown">
               <div className="menu">
-                <button onClick={requestPushNotifications}>
+                <button className="nav-btn" onClick={requestPushNotifications}>
                   Notifications
                 </button>
                 <div
@@ -54,8 +54,10 @@ class Navbar extends Component {
                 >
                   {this.props.username}&nbsp;&nbsp;&nbsp;<span>▸</span>
                 </div>
-                <button onClick={this.props.openRules}>Rules</button>
-                <button className="logout" onClick={this.props.logout}>
+                <button className="nav-btn" onClick={this.props.openRules}>
+                  Rules
+                </button>
+                <button className="nav-btn" onClick={this.props.logout}>
                   Logout
                 </button>
               </div>

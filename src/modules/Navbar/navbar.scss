@@ -98,15 +98,15 @@
 
           .avatar-picker {
             width: 0px;
-            padding: 0 20px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
             align-items: center;
-            transition: width 0.2s ease;
+            transition: all 0.2s ease;
 
             &.open {
+              padding: 0 20px;
               width: 40px;
             }
 

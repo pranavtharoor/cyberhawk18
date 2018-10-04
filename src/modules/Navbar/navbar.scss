@@ -98,6 +98,7 @@
 
           .avatar-picker {
             width: 0px;
+            padding: 0 20px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
@@ -120,7 +121,7 @@
       }
     }
 
-    .logout {
+    .nav-btn {
       border: none;
     }
   }

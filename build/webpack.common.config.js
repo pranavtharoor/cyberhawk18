@@ -39,7 +39,9 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       { from: './src/sw.js', to: './' },
-      { from: './src/public/hawk.png', to: './' }
+      { from: './src/public/hawk.png', to: './' },
+      { from: './src/public/manifest.json', to: './' },
+      { from: './src/public/icons', to: './images/icons' }
     ])
   ],
   node: {

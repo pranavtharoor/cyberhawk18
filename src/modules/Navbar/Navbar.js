@@ -26,7 +26,9 @@ class Navbar extends Component {
         <div className="logo">
           <img src={hawk} />
         </div>
-        <div className="level">LEVEL&nbsp;{this.props.level}</div>
+        <div className="level">
+          LEVEL&nbsp;{this.props.level === 14 ? '12 + 2' : this.props.level}
+        </div>
         <div
           className={`avatar ${this.props.avatar}`}
           style={{

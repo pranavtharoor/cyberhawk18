@@ -11,13 +11,15 @@ const actionHandlers = {
     ...s,
     gameData: { ...s.gameData, avatar: a.payload }
   }),
-  SET_RULES: (s, a) => ({ ...s, rulesOpen: a.payload })
+  SET_RULES: (s, a) => ({ ...s, rulesOpen: a.payload }),
+  CLOSE_END_MESSAGE: s => ({ ...s, gameEndMessgeOpen: false })
 };
 
 const initialState = {
   rulesOpen: false,
   loggedIn: false,
   loading: true,
+  gameEndMessgeOpen: true,
   gameData: {
     avatar: 'identicon',
     email: '',

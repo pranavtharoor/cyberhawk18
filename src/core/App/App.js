@@ -14,6 +14,7 @@ import BG3 from 'Src/public/BG3.png';
 import BG1m from 'Src/public/BG1m.png';
 import BG2m from 'Src/public/BG2m.png';
 import BG3m from 'Src/public/BG3m.png';
+import EndMessage from 'Src/modules/EndMessage';
 
 const App = props => (
   <div>
@@ -42,6 +43,10 @@ const App = props => (
       >
         <Navbar />
         {props.rulesOpen && <Rules />}
+
+        {props.gameEndMessgeOpen && (
+          <EndMessage closeEndMessge={props.closeEndMessge} />
+        )}
         {!props.loggedIn && <div className="hr" />}
         <Switch>
           {routes.map(route => (
@@ -63,7 +68,9 @@ App.propTypes = {
   rulesOpen: PropTypes.bool.isRequired,
   loggedIn: PropTypes.bool.isRequired,
   loading: PropTypes.bool.isRequired,
-  level: PropTypes.number.isRequired
+  level: PropTypes.number.isRequired,
+  gameEndMessgeOpen: PropTypes.bool.isRequired,
+  closeEndMessge: PropTypes.func.isRequired
 };
 
 export default App;

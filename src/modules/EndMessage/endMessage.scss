@@ -1,0 +1,40 @@
+@import 'Src/core/common.scss';
+
+.end-message {
+  @include card();
+  height: 200px;
+  width: 300px;
+  position: fixed;
+  top: calc(50vh - 100px);
+  left: calc(50% - 150px);
+  background: #222;
+  z-index: 20000;
+  color: white;
+  padding: 20px;
+  overflow-y: auto;
+
+  .heading {
+    text-align: center;
+    font-size: 24px;
+    padding-top: 20px;
+  }
+
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 34px;
+    font-weight: bold;
+  }
+
+  .message {
+    text-align: center;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    padding-top: 35px;
+  }
+}
